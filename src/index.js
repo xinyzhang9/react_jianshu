@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloWorld from './helloWorld';
+import News from './News';
 
 ReactDOM.render(
-  <HelloWorld name1='Tom' name2='Jason'/>,
+  <News />,
   document.getElementById('root')
 );

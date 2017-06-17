@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
 
 class HelloWorld extends Component {
-  state = {
-    switch:0,
-    name: this.props.name1
-  }
   clickHandler = () => {
-    const { name1, name2 } = this.props;
-    if(this.state.switch === 0){
-      console.log(name1);
-      this.setState({
-        switch:1,
-        name:name2
-      })
-    }else{
-      console.log(name2);
-      this.setState({
-        switch:0,
-        name:name1
-      })
-    }
+    console.log(this.refs);
   }
+
+  // better for ajax
+  componentDidMount(props){
+    console.log(this.refs);
+  }
+
 
   render(){
     return(
-      <div onClick={this.clickHandler.bind(this)}>{this.state.name} says Hello World!</div>
+      <div className='container' onClick={this.clickHandler.bind(this)}>
+        <div ref='hello' className='hello'>Hello</div>
+        <div ref='world' className='world'>World</div>
+      </div>
     )
   }
 }
